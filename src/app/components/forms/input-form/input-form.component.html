@@ -1,0 +1,23 @@
+<div class="flex relative float-label-input items-center">
+  <input 
+      [type]="inputType" 
+      [id]="inputId" 
+      [(ngModel)]="inputValue"
+      placeholder=" "
+      class="w-full bg-white focus:outline-none focus:shadow-outline border-2 border-gray-300 rounded-md py-3 px-3 pr-10 block appearance-none leading-normal focus:border-blue-400"
+  />
+  
+  <!-- Etiqueta flotante -->
+  <label 
+      [for]="inputId"
+      class="absolute top-3 left-3 text-gray-400 pointer-events-none transition duration-200 ease-in-out bg-white px-2 peer-focus:text-blue-600"
+  >
+    {{ label }}
+  </label>
+
+ <!-- Icono proyectado a la derecha del input -->
+ <div class="absolute right-3 w-5 h-5 text-gray-400 transition duration-200 ease-in-out peer-focus:text-blue-600 peer-placeholder-shown:text-gray-400">
+  <ng-content></ng-content>
+</div>
+
+</div>

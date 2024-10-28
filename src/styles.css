@@ -1,1 +1,41 @@
-/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+.bg-sidebar{
+  background-color: #111827;
+}
+.custom-shadow {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Cambia los valores según sea necesario */
+}
+
+  
+  .float-label-input:focus-within label,
+  .float-label-input input:not(:placeholder-shown) + label {
+    transform: translateY(-1.5rem) scale(0.75);
+    background-color: white;
+  }
+  
+  .float-label-input input:focus + label,
+  .float-label-input input:not(:placeholder-shown) + label {
+    color: blue; /* Cambiar a azul cuando el input tiene foco o tiene texto */
+  }
+  
+  .float-label-input input:not(:placeholder-shown):not(:focus) + label {
+    color: gray; /* Cambiar de nuevo a gris cuando hay texto y no está enfocado */
+  }
+  
+
+
+.float-label-select select:focus + label,
+.float-label-select select.has-value + label {
+    transform: translateY(-1.5rem) scale(0.75); /* Mueve la etiqueta hacia arriba */
+    background-color: white; /* Asegura que el fondo de la etiqueta se mantenga blanco */
+    color: blue; /* Cambiar a azul cuando el select tiene valor o está enfocado */
+}
+
+.float-label-select select:not(:placeholder-shown):not(:focus) + label {
+    color: gray; /* Cambiar a gris cuando hay texto y no está enfocado */
+}

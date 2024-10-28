@@ -1,0 +1,170 @@
+
+  <div class="p-8 bg-purple-100 mx-auto mt-8">
+    <!-- Header -->
+    <div class="flex items-center justify-between mb-6">
+      <h1 class="text-2xl font-semibold">Tarifa de tramos por cliente</h1>
+      <div class="flex items-center space-x-2">
+        <span>Boxed</span>
+        <div class="flex bg-white rounded-full shadow-md overflow-hidden">
+          <button class="px-4 py-2 bg-gray-200 text-gray-700">Boxed</button>
+          <button class="px-4 py-2 bg-blue-500 text-white">Full-Width</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Table Container -->
+    <div class="bg-white rounded-lg shadow-md">
+      <!-- Table Header -->
+      <div class="flex items-center p-4 border-b border-gray-200">
+        <h2 class="text-lg font-semibold">Tramos</h2>
+        <div class="relative ml-auto mr-4">
+          <input
+            type="text"
+            placeholder="Search..."
+            class="pl-10 pr-4 py-2 border border-gray-300 rounded-md focus:border-blue-400 focus:outline-none w-64"
+          />
+          <svg
+            class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M12.9 14.32a8 8 0 111.42-1.42l4.28 4.28a1 1 0 01-1.42 1.42l-4.28-4.28zm-1.4-.92a6 6 0 10-8.48-8.48 6 6 0 008.48 8.48z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </div>
+        <button class="p-2 rounded-full bg-gray-200 hover:bg-gray-300 mr-2">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+          >
+            <path
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.5"
+              d="M4 5h16m-2 7H6m2 7h8"
+              color="currentColor"
+            />
+          </svg>
+        </button>
+        <button class="ml-4 p-2 bg-blue-500 rounded-full text-white shadow-xl">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+          >
+            <path fill="currentColor" d="M13 4v7h7v2h-7v7h-2v-7H4v-2h7V4z" />
+          </svg>
+        </button>
+      </div>
+      <div class="overflow-x-auto">
+        <!-- Table Body -->
+        <table class="relative min-w-full text-left">
+          <thead class="bg-gray-100">
+            <tr>
+              <th class="py-3 px-4">
+                <input type="checkbox" class="form-checkbox h-4 w-4" />
+              </th>
+              <th class="py-3 px-4">TRAMO</th>
+              <th class="py-3 px-4">DESCRIPCION</th>
+              <th class="py-3 px-4">COSTO</th>
+              <th class="py-3 px-4">TM</th>
+              <th class="py-3 px-4">PRECIO VENTA</th>
+              <th class="py-3 px-4">DESC.ABS</th>
+              <th class="py-3 px-4">TOTAL VENTA</th>
+              <th class="py-3 px-4">RENTA %</th>
+              <th class="py-3 px-4">TM</th>
+              <th class="py-3 px-4"></th>
+            </tr>
+          </thead>
+          <tbody class="bg-white">
+            <tr *ngFor="let dato of datos" class="border-b hover:bg-gray-50">
+              <td class="py-3 px-4">
+                <input type="checkbox" class="form-checkbox h-4 w-4" />
+              </td>
+
+              <td class="py-3 px-4">{{ dato.tramo }}</td>
+              <td class="py-3 px-4">{{ dato.descripcion }}</td>
+              <td class="py-3 px-4">{{ dato.costo }}</td>
+              <td class="py-3 px-4">{{ dato.tm }}</td>
+              <td class="py-3 px-4">{{ dato.precioVenta }}</td>
+              <td class="py-3 px-4">{{ dato.descAbs }}</td>
+              <td class="py-3 px-4">{{ dato.totalVenta }}</td>
+              <td class="py-3 px-4">{{ dato.renta }}</td>
+              <td class="py-3 px-4">{{ dato.tm }}</td>
+
+              <td class="py-3 px-4 text-gray-500 cursor-pointer">
+                <app-dropdown-button></app-dropdown-button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- Paginación -->
+        <div class="flex items-center justify-end bg-gray-100 p-4 space-x-6">
+          <!-- Selección de ítems por página -->
+          <div class="flex items-center space-x-2">
+            <label class="text-sm">Items per page:</label>
+            <div class="relative">
+              <select
+                class="form-select block w-full rounded border border-gray-300 bg-white py-1 px-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              >
+                <option value="5">5</option>
+                <option value="10" selected>10</option>
+                <option value="20">20</option>
+                <option value="50">50</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="text-sm">
+            <span>1 – 10 of 30</span>
+          </div>
+
+          <!-- Botones de navegación -->
+          <div class="flex items-center space-x-2">
+            <button
+              class="p-2 rounded-full hover:bg-gray-200 disabled:opacity-50"
+              disabled
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="#000000"
+                  d="m10.8 12l3.9 3.9q.275.275.275.7t-.275.7t-.7.275t-.7-.275l-4.6-4.6q-.15-.15-.212-.325T8.425 12t.063-.375t.212-.325l4.6-4.6q.275-.275.7-.275t.7.275t.275.7t-.275.7z"
+                />
+              </svg>
+            </button>
+
+            <button
+            class="p-2 rounded-full hover:bg-gray-200 disabled:opacity-50"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="#000000"
+                  d="M12.6 12L8.7 8.1q-.275-.275-.275-.7t.275-.7t.7-.275t.7.275l4.6 4.6q.15.15.213.325t.062.375t-.062.375t-.213.325l-4.6 4.6q-.275.275-.7.275t-.7-.275t-.275-.7t.275-.7z"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>

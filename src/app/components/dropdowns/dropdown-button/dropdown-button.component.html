@@ -1,0 +1,68 @@
+<div class="relative inline-block text-left">
+  <button
+    type="button"
+    (click)="toggleMenu()"
+    class="inline-flex justify-center items-center rounded-full px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+  >
+    <!-- Icono SVG -->
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+    >
+      <path
+        fill="currentColor"
+        d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0-4 0m0-6a2 2 0 1 0 4 0a2 2 0 0 0-4 0m0 12a2 2 0 1 0 4 0a2 2 0 0 0-4 0"
+      />
+    </svg>
+  </button>
+
+  <!-- Menú desplegable -->
+  <div
+    *ngIf="isOpen"
+    class="absolute p-2 right-0 z-20 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 transition-all duration-300 ease-in-out"
+  >
+    <div role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
+      <div
+        class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:shadow-md cursor-pointer transition-shadow duration-200"
+        (click)="optionSelected('Modify')"
+        role="menuitem"
+      >
+        Modify
+        <!-- SVG icon for Modify on the right -->
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          class="ml-2"
+        >
+          <path
+            fill="#000000"
+            d="M3 21v-4.25L16.2 3.575q.3-.275.663-.425t.762-.15t.775.15t.65.45L20.425 5q.3.275.438.65T21 6.4q0 .4-.137.763t-.438.662L7.25 21zM17.6 7.8L19 6.4L17.6 5l-1.4 1.4z"
+          />
+        </svg>
+      </div>
+      <div
+        class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:shadow-md cursor-pointer transition-shadow duration-200"
+        (click)="optionSelected('Delete')"
+        role="menuitem"
+      >
+        Delete
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          class="ml-2"
+        >
+          <path
+            fill="#000000"
+            d="M7 21q-.825 0-1.412-.587T5 19V6H4V4h5V3h6v1h5v2h-1v13q0 .825-.587 1.413T17 21zm2-4h2V8H9zm4 0h2V8h-2z"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>

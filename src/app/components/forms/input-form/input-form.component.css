@@ -1,0 +1,22 @@
+
+
+.float-label-input:focus-within label,
+.float-label-input input:not(:placeholder-shown) + label {
+  transform: translateY(-1.5rem) scale(0.75);
+  background-color: white;
+}
+
+.float-label-input input:focus + label,
+.float-label-input input:not(:placeholder-shown) + label {
+  color: blue; /* Cambiar a azul cuando el input tiene foco o tiene texto */
+}
+
+.float-label-input input:not(:placeholder-shown):not(:focus) + label {
+  color: gray; /* Cambiar de nuevo a gris cuando hay texto y no está enfocado */
+}
+
+  /* Color del icono en el estado de foco o con texto */
+.float-label-input input:focus ~ .right-3,
+.float-label-input input:not(:placeholder-shown) ~ .right-3 {
+  color: blue; /* Cambiar a azul cuando el input tiene foco o contiene texto */
+}

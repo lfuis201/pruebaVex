@@ -1,0 +1,73 @@
+<div class="p-5">
+    <div class="card overflow-hidden shadow-lg rounded-xl">
+      <div class="h-64 relative border overflow-hidden">
+        <!-- Imagen de fondo -->
+        <img
+          src="https://c4.wallpaperflare.com/wallpaper/97/833/155/mountains-firewatch-green-forest-wallpaper-preview.jpg"
+          class="w-full h-full object-cover"
+        />
+        <!-- Capa de superposición oscura -->
+        <div class="absolute bg-black opacity-25 inset-0 w-full h-full"></div>
+        <!-- Avatar en pantalla pequeña -->
+        <img
+          src="assets/img/avatars/1.jpg"
+          class="avatar h-24 w-24 absolute top-6 left-4 sm:hidden"
+        />
+      </div>
+      <!-- Contenedor principal de la tarjeta -->
+      <div class="relative -mt-16 px-6 flex items-center">
+        <!-- Avatar en pantalla grande -->
+        <img
+          src="https://easy-peasy.ai/cdn-cgi/image/quality=80,format=auto,width=700/https://fdczvxmwwjwpwbeeqcth.supabase.co/storage/v1/object/public/images/50dab922-5d48-4c6b-8725-7fd0755d9334/3a3f2d35-8167-4708-9ef0-bdaa980989f9.png"
+          class="avatar h-24 w-24 hidden sm:block border-2 border-white rounded-full"
+        />
+        <!-- Información del usuario -->
+        <div class="flex-auto sm:ml-6 max-w-full">
+          <div class="h-16 flex items-end">
+            <h1 class="text-white text-3xl font-semibold pb-2 m-0">
+              David Smith
+            </h1>
+          </div>
+          <!-- Barra de navegación -->
+          <nav class="border-0 flex space-x-4 text-primary w-full">
+            <a
+              routerLink="/clientes"
+              class="tab-link text-lg font-medium py-2 px-3 border-b-2 border-transparent focus:outline-none relative group flex-grow text-center hover:bg-gray-200"
+            >
+              CLIENTES
+              <span
+                class="absolute left-0 bottom-0 w-full h-0.5 bg-red-500 scale-x-0 group-hover:scale-x-100 transition-transform duration-300"
+              ></span>
+            </a>
+            <a
+              routerLink="/tramos"
+              class="tab-link text-lg font-medium py-2 px-3 border-b-2 border-transparent focus:outline-none relative group flex-grow text-center hover:bg-gray-200"
+            >
+              TRAMOS TARIFA
+              <span
+                class="absolute left-0 bottom-0 w-full h-0.5 bg-green-500 scale-x-0 group-hover:scale-x-100 transition-transform duration-300"
+              ></span>
+            </a>
+            <a
+              href="/"
+              class="tab-link text-lg font-medium py-2 px-3 border-b-2 border-transparent opacity-50 pointer-events-none relative group flex-grow text-center hover:bg-gray-300"
+            >
+              FRIENDS
+              <span
+                class="absolute left-0 bottom-0 w-full h-0.5 bg-blue-500 scale-x-0 group-hover:scale-x-100 transition-transform duration-300"
+              ></span>
+            </a>
+            <a
+              href="/"
+              class="tab-link text-lg font-medium py-2 px-3 border-b-2 border-transparent opacity-50 pointer-events-none relative group flex-grow text-center hover:bg-gray-300"
+            >
+              PHOTOS
+              <span
+                class="absolute left-0 bottom-0 w-full h-0.5 bg-yellow-500 scale-x-0 group-hover:scale-x-100 transition-transform duration-300"
+              ></span>
+            </a>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
